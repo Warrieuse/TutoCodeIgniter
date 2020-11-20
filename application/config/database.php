@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'localhost:8888',	// nom d'hôte du serveur de base de données 
+	'username' => 'ocrci',     // nom d'utilisateur de la base de données
+	'password' => 'ocrci',     // mot de passe de la base de données
+	'database' => 'ocrci',     // nom de la base de données
+	'dbdriver' => 'mysqli',	// pilote du serveur de la base de données
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

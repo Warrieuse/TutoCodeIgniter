@@ -58,7 +58,9 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database','session');
+//ON charge dans les librairies database pour la connection &
+// session car besoin des variable de SESSION pour authentification
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +134,5 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+// nous avons crée le model Auth_user pour identifier les membres dans la base de données
+$autoload['model'] = array('Auth_user');
