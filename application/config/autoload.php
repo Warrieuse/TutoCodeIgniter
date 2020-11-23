@@ -135,4 +135,4 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 // nous avons crée le model Auth_user pour identifier les membres dans la base de données
-$autoload['model'] = array('Auth_user');
+$autoload['model'] = array('auth_user');

@@ -80,6 +80,33 @@ class Site extends CI_Controller { // on es dans le controllers
 	public function session_test() {
         $this->session->count ++;
         echo"Valeur :" . $this->session->count;
+	}
+	//je rajoute la function connexion
+	public function connexion() {
+        $this->load->helper("form");
+        $this->load->library('form_validation');
+
+        $data["title"] = "Identification";
+
+        if($this->form_validation->run()) {
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $this->auth_user->login( $username, $password);
+            if($this->auth_user->is_connected) {
+                redirect('index');
+            } else {
+                $data['login_error'] = "Échec de l'authentification";
+            }
+        }
+
+        $this->load->view('common/header', $data);
+        $this->load->view('site/connexion', $data);
+        $this->load->view('common/footer', $data);
+    }
+	// function deconnexion
+	function deconnexion() {
+        $this->auth_user->logout();
+        redirect('index');
     }
 }
 

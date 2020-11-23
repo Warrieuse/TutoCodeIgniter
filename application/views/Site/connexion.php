@@ -4,6 +4,16 @@
     <hr/>
   </div>
   <div class="row">
+    <!--message d'erreur si echec authentifcation-->
+      <?= form_open('connexion', ['class' => 'form-horizontal']); ?>
+        <?php if (!empty($login_error)): ?>
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 has-error">
+              <span class="help-block"><?= $login_error; ?></span>
+            </div>
+          </div>
+        <?php endif; ?>
+
     <?= form_open('connexion', ['class' => 'form-horizontal']); ?>
     <div class="form-group">
       <?= form_label("Nom d'utilisateur&nbsp;:", "username", ['class' => "col-md-2 control-label"]) ?>

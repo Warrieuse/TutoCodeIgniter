@@ -35,7 +35,7 @@ $config = array(
             'label' => 'Message',
             'rules' => 'required'
         )
-    )
+        ),
 
     'site/connexion' => array(
         
@@ -49,7 +49,7 @@ $config = array(
             'label' => 'Mot de passe',
             'rules' => 'required'
         )
-    )
+        ),
 
 );
 
