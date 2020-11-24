@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Articles extends CI_Model { // on crée un objet Article qui est le model de CI_MOdel
+class Articles extends CI_Model {
 
     protected $_list;
 
-    public function __construct() { // le contructor
+    public function __construct() {
         parent::__construct();
         $this->_list = [];
     }
@@ -41,6 +41,8 @@ class Articles extends CI_Model { // on crée un objet Article qui est le model 
         $this->_list = $this->db->get()-> result();
     }
 }
+
+
 
 /*J'ai utilisé la même méthode __get() que pour le modèle servant à l'authentification 
 (il faudra que je pense à créer une sur-classe avec les méthodes courantes). Si vous avez

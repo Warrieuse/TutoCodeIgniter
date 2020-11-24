@@ -50,6 +50,20 @@ $config = array(
             'rules' => 'required'
         )
         ),
+// rajout de regle pour l'ajout d'un nouvel article.
+        'blog/edition' => array(
+        
+            array(
+                'field' => 'title',
+                'label' => "Titre",
+                'rules' => 'required'
+            ), 
+            array(
+                'field' => 'content',
+                'label' => 'Contenu',
+                'rules' => 'required'
+            )
+            ),
 
 );
 

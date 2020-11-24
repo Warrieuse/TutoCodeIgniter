@@ -54,8 +54,19 @@ $route['default_controller'] = 'site';	// Si aucun paramètre n'est donné, c'es
 										// pas nécessaire d'indiquer la méthode
 										// 'index()' c'est celle qui est appelée
 										// par défaut
+
+//J'aimerais que l'adresse http://localhost/blog/ nous donne la liste des articles de notre blog.
+$route['blog'] = 'blog/index'; // l'URI 'blog' sera redirigée vers 'blog/index'
+//Attention ! $route['blog'] doit se trouver avant $route['(:any)'], 
+//sinon c'est cette dernière qui sera prise en compte et nous aurons
+//toujours une erreur si nous voulons accéder à l'adresse http://localhost/blog/.
 $route ['(:any)'] = 'site/$1'; 	// si un seul paramètre est donné, il sera utilisé
 								// comme méthode du contrôleur 'site'. Cela per-
 								// mettra de 'cacher' ce dernier dans les adresses.
+
+$route ['blog/(:any)_(:num)'] = 'blog/article/$2'; 	// $2 se réfère au contenu du
+													// deuxième jeu de parenthèses
 $route['404_override'] = '';
+
 $route['translate_uri_dashes'] = FALSE;
+
